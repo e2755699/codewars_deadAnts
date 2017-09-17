@@ -12,15 +12,7 @@ namespace codewars_deadAnts
         {
             if (input != "ant")
             {
-                int head = 0;
-                foreach (var postion in input)
-                {
-                    if (postion == 'a')
-                    {
-                        head++;
-                    }
-                }
-                return head;
+                return input.Count(x => x == 'a');
             }
             else
             {
