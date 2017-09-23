@@ -31,6 +31,12 @@ namespace codewars_deadAnts
         }
 
         [TestMethod]
+        public void Input_an_ShouldReturn_one()
+        {
+            Assert.AreEqual(1, GetDeadAnts("an"));
+        }
+
+        [TestMethod]
         public void InputNull_ShouldReturn_Zero()
         {
             Assert.AreEqual(0, GetDeadAnts(null));
