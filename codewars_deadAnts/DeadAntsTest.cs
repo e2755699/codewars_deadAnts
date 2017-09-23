@@ -25,21 +25,15 @@ namespace codewars_deadAnts
         }
 
         [TestMethod]
-        public void Input_n_shouldReturn_one()
-        {
-            Assert.AreEqual(1, GetDeadAnts("n"));
-        }
-
-        [TestMethod]
-        public void Input_an_shouldReturn_one()
-        {
-            Assert.AreEqual(1, GetDeadAnts("an"));
-        }
-
-        [TestMethod]
         public void Input_aa_shouldReturn_two()
         {
             Assert.AreEqual(2, GetDeadAnts("aa"));
+        }
+
+        [TestMethod]
+        public void InputNull_ShouldReturn_Zero()
+        {
+            Assert.AreEqual(0, GetDeadAnts(null));
         }
     }
 }

@@ -4,20 +4,21 @@ namespace codewars_deadAnts
 {
     internal class Kata
     {
-        public Kata()
+        public int Accum(string ants)
         {
-        }
-
-        public int Accum(string input)
-        {
-            if (input != "ant")
-            {
-                return input.Count(x => x == 'a');
-            }
-            else
+            if (string.IsNullOrEmpty(ants))
             {
                 return 0;
             }
+
+            int deadAnts = ants.Count(partOfAntBody => partOfAntBody == 'a' || partOfAntBody == 'n' || partOfAntBody == 't');
+
+            if (ants == "ant")
+            {
+                return 0;
+            }
+
+            return deadAnts;
         }
     }
 }
