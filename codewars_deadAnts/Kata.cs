@@ -7,15 +7,8 @@ namespace codewars_deadAnts
     {
         public int Accum(string ants)
         {
-            if (string.IsNullOrEmpty(ants))
-            {
-                return 0;
-            }
-            ants = ants.Replace("ant", " ");
-            int head = ants.Count(a => a == 'a');
-            int body = ants.Count(a => a == 'n');
-            int trail = ants.Count(a => a == 't');
-            return Math.Max(trail, Math.Max(head, body));
+            ants = ants?.Replace("ant", "") ?? "";
+            return Math.Max(ants.Count(a => a == 't'), Math.Max(ants.Count(a => a == 'a'), ants.Count(a => a == 'n')));
         }
     }
 }
