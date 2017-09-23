@@ -11,27 +11,11 @@ namespace codewars_deadAnts
             {
                 return 0;
             }
-
             ants = ants.Replace("ant", " ");
-            string newbody = string.Empty;
-            foreach (var body in ants)
-            {
-                if (body == 'a' || body == 'n' || body == 't')
-                {
-                    newbody += body;
-                }
-            }
-            
-            ants = ants.Replace("ant", " ").Replace(" ","");
-            int deadAnts = 0;
-            ants = ants.Replace("an", " ");
-            deadAnts += ants.Split(' ').Length - 1;
-            ants = ants.Replace(" ", "").Replace("nt", " ");
-            deadAnts += ants.Split(' ').Length - 1;
-            ants = ants.Replace(" ", "").Replace("at", " ");
-            deadAnts += ants.Split(' ').Length - 1;
-            deadAnts += ants.Length;
-            return deadAnts;
+            int head = ants.Count(a => a == 'a');
+            int body = ants.Count(a => a == 'n');
+            int trail = ants.Count(a => a == 't');
+            return Math.Max(trail, Math.Max(head, body));
         }
     }
 }
