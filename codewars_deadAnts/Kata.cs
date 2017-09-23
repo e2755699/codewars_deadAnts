@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace codewars_deadAnts
 {
@@ -11,14 +12,13 @@ namespace codewars_deadAnts
                 return 0;
             }
 
-            int deadAnts = ants.Count(partOfAntBody => partOfAntBody == 'a' || partOfAntBody == 'n' || partOfAntBody == 't');
-
-            if (ants == "ant")
+            bool IsDeadAnt(char partOfAntBody)
             {
-                return 0;
+                return partOfAntBody == 'a' || partOfAntBody == 'n' || partOfAntBody == 't';
             }
+            int deadAnts = ants.Count(IsDeadAnt);
 
-            return deadAnts;
+            return ants == "ant" ? 0 : deadAnts;
         }
     }
 }
